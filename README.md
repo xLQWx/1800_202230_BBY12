@@ -6,7 +6,8 @@
 
 ## General Info
 This browser based web application to ...
-	
+Hy my name is Harrison!!
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
