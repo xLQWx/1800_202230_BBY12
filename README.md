@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 Hy my name is Harrison!!
+Hi my name is Yvonne.
 
 ## Technologies
 Technologies used for this project:
