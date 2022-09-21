@@ -6,7 +6,7 @@
 
 ## General Info
 This browser based web application to ...
-Hi my name is Harrison!!
+Hi my name is Harrison!! I like dogs!
 Hi my name is Yvonne.
 
 ## Technologies
