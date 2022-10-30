@@ -34,6 +34,8 @@ It has the following subfolders and files:
     /blah.js                 # 
 ├── styles                   # Folder for styles
     /blah.css                # 
+├── text                     # Folder for partial htmls
+    /blah.html               # 
 
 Firebase hosting files: 
 ├── .firebaserc...
