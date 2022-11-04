@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Isorropia</title>
+    <meta name="comp1800 template" content="My 1800 App">
+
+    <!------------------------>
+    <!-- Required meta tags -->
+    <!------------------------>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!------------------------------------------>
+    <!-- Bootstrap Library CSS JS CDN go here -->
+    <!------------------------------------------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <!-------------------------------------------->
+    <!-- Other libraries and styles of your own -->
+    <!-------------------------------------------->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+
+</head>
+
+<body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+
+    <!-- our own navbar goes here -->
+    <nav id="navbarPlaceholder"></nav>
+
+    <!-- the body of your page goes here -->
+    <!-- stuff -->
+
+    <!-- Larger text area -->
+
+
+    <!-- Forms -->
+    <main>
+        <div class="container  mt-5">
+            <form>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Category of Goal
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><button class="dropdown-item" type="button">Diet/Calories</button></li>
+                        <li><button class="dropdown-item" type="button">Fitness</button></li>
+                        <li><button class="dropdown-item" type="button">School</button></li>
+                        <li><button class="dropdown-item" type="button">Mental Health</button></li>
+                        <li><button class="dropdown-item" type="button">Habits</button></li>
+                        <li><button class="dropdown-item" type="button">Skills</button></li>
+                        <li><button class="dropdown-item" type="button">Misc</button></li>
+                    </ul>
+
+                </div>
+
+                <label> Goal Title </label>
+                <br>
+                <input id="title" type="text">
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descrition</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Completion Date</label>
+                    <input type="date" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+
+                <br>
+                <br>
+
+                <label> Subgoal </label>
+                <br>
+                <input id="title" type="text">
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Descrition</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Completion Date</label>
+                    <input type="date" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+
+                <div>
+                    <button class="btn btn-success" type="button" style="background-color:cadetblue">Add Subgoal</button>
+                </div>
+
+                <br>
+                
+                <div>
+                    <input class="btn btn-secondary" type="button" value="Cancel" position="left">
+                    <input class="btn btn-primary" type="submit" value="Confirm" position="right">
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+
+    <!-- our own footer goes here-->
+    <nav id="footerPlaceholder"></nav>
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
+    <script src="./scripts/firebaseAPI_TEAM12.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    <!-- <script src="./scripts/script.js"></script>  -->
+</body>
+
+</html>
