@@ -33,6 +33,7 @@
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- <link rel="stylesheet" href="./styles/style.css"> -->
 
@@ -83,40 +84,38 @@
                 </div>
 
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Completion Date</label>
-                    <input type="date" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
+                <div class="mb-3"><label for="exampleFormControlInput1" class="form-label">Completion Date</label>
+                <input type="date" class="form-label" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
-
+                
                 <br>
                 <br>
-
-                <label> Subgoal </label>
-                <br>
-                <input id="title" type="text">
-
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descrition</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                </div>
-
-
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Completion Date</label>
-                    <input type="date" class="form-control" id="exampleFormControlInput1"
-                        placeholder="name@example.com">
-                </div>
-
                 <div>
-                    <button class="btn btn-success" type="button" style="background-color:cadetblue">Add Subgoal</button>
+                    <label> Subgoal </label>
+                    <br>
+                    <input id="title" type="text">
+                
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Descrition</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                    </div>
+                
+                
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Completion Date</label>
+                        <input type="date" class="form-horizontal" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                
+                    <div>
+                        <button id="Add-subgoal" class="btn btn-success" type="button" style="background-color:cadetblue">Add
+                            Subgoal</button>
+                    </div>
                 </div>
-
+                
                 <br>
                 
-                <div>
-                    <input class="btn btn-secondary" type="button" value="Cancel" position="left">
-                    <input class="btn btn-primary" type="submit" value="Confirm" position="right">
+                <div class="mt-4"><input class="btn btn-secondary" type="button" value="Cancel" position="left">
+                    <input id = "Confirm" class="btn"  type="submit" value="Confirm" position="right">
                 </div>
             </form>
         </div>
