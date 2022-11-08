@@ -34,7 +34,7 @@
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
@@ -50,17 +50,43 @@
                 <small class="goal_date">Time</small>
             </div>
             <p class="mb-1 text-muted goal_description">Get description</p>
+            <div class="list-group w-auto text-muted" id="tasks-go-here">Tasks
+                <label class="list-group-item d-flex gap-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+                    <span class="pt-1 form-checked-content">
+                      <strong class="task_detail">task title</strong>
+                      <small class="d-block text-muted task_date">
+                        1:00–2:00pm
+                      </small>
+                    </span>
+                  </label>
+            </div>
         </a>    
+    </template>
+    <template id="taskTemplate">
+        <label class="list-group-item d-flex gap-3">
+            <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+            <span class="pt-1 form-checked-content">
+              <strong class="task_detail">task title</strong>
+              <small class="d-block text-muted task_date">
+                1:00–2:00pm
+              </small>
+            </span>
+          </label>
     </template>
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <div class="list-group" id="goals-go-here">
+    <div class="container mt-4">
+        <div class="list-group accordion col-12 col-md-8 mx-auto" id="goals-go-here">
+        </div>   
     </div>
-
+    
     <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
+    <footer id="footerPlaceholder"></footer>
+    <footer id="bottomNavPlaceholder"></footer>
+
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
