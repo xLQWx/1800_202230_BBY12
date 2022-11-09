@@ -1,1 +1,6 @@
-
+/* .material-icons.md-18 { 
+    font-size: 18px; 
+} */
+#bottomNavPlaceholder a:hover, #bottomNavPlaceholder a:active{
+    color:white !important;
+}

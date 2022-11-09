@@ -1,0 +1,569 @@
+#Confirm {
+  color: #ffffff;
+  background-color:cadetblue;
+}
+
+#Add-subgoal {
+    color: #ffffff;
+    background-color:cadetblue;
+  }
+
+* {
+  box-sizing: border-box; /* border: 1px solid black; */
+}
+
+@font-face {
+  font-family: "Shalimar-Regular";
+  src: url("./Shalimar-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1600px) {
+  #second-nav-left {
+    display: none;
+  }
+
+  #wrapper {
+    background-color: rgba(165, 96, 77, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 10fr 1fr;
+  }
+
+  #left {
+    grid-row: 1/2;
+  }
+
+  #logo {
+    background-color: black;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    padding-bottom: 120px;
+
+    grid-row: 1/2;
+
+    font-family: "Permanent Marker";
+    text-align: center;
+    color: white;
+  }
+
+  #logo > p {
+    position: relative;
+    top: 1em;
+  }
+
+  #left > nav > a {
+    display: block;
+    text-align: left;
+  }
+
+  #left > nav > a > p {
+    display: inline;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #left-content {
+    margin-top: 20%;
+  }
+
+  #left-content > p {
+    margin-bottom: 25%;
+  }
+
+  #second-nav > a {
+    background-color: rgba(227, 89, 105, 0.8);
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+  }
+
+  #subscriptions {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  #cake {
+    display: inline;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #email {
+    display: inline;
+    margin-top: 16%;
+    margin-left: 16%;
+  }
+
+  #thebigimage {
+    display: block;
+    width: 100%;
+  }
+
+  #wings_two {
+    display: none;
+    max-width: 100%;
+  }
+
+  #figgyfiggyfiggycantyousee {
+    background-color: rgba(0, 0, 0, 0.3);
+    /* font-family: "Dancing Script"; */
+    font-family: "Shalimar-Regular";
+    color: white;
+    max-width: 400px;
+    font-size: 30px;
+    display: block;
+    float: left;
+    position: relative;
+    top: 75%;
+  }
+
+  #banner {
+    display: grid;
+    grid-template-rows: 4fr 1fr 1fr;
+  }
+
+  #banner > nav > a {
+    width: 24%;
+    display: inline-block;
+  }
+
+  #subscribe > * {
+    display: inline-block;
+  }
+
+  #subscribe {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+  }
+
+  #stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #storyoneimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+  #storytwoimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+
+  #storythreeimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+
+  #storyfourimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+
+  #copyright {
+    text-align: left;
+  }
+
+  #footerright {
+    border-top: 10px red;
+
+    text-align: right;
+    padding-top: 10%;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1280px) {
+  #second-nav-left {
+    display: none;
+  }
+  #wrapper {
+    background-color: rgba(165, 96, 77, 0.5);
+    display: grid;
+    /* grid-template-rows: 10fr 1fr; */
+  }
+
+  #left {
+    display: grid;
+    grid-row: 1/2;
+    grid-template-columns: 2fr 5fr;
+  }
+
+  #logo {
+    /* background-color: black;
+        border-radius: 50%;
+        width: 120px; height: 120px;
+        /* width: 50%;
+        height: 0; */
+    /* padding-bottom: 120px;
+        /* padding-bottom: 50%; 
+
+        grid-row: 1/2;
+        
+        font-family: "Permanent Marker";
+        text-align: center;
+        color: white; */
+    position: relative;
+    background: black;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    grid-column: span 1;
+    grid-row: span 1;
+
+    font-family: "Permanent Marker";
+    text-align: center;
+    color: white;
+  }
+
+  #logo > p {
+    position: relative;
+    top: 10px;
+  }
+
+  #main-nav {
+    grid-row: 1/2;
+    grid-column: 2/5;
+  }
+
+  #banner {
+    display: grid;
+    grid-template-rows: 4fr 1fr 1fr;
+  }
+
+  #left > nav > a {
+    /* Makes the element take up the entire width */
+    display: inline-block;
+    text-align: left;
+  }
+
+  #left > nav > a > p {
+    display: inline;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #left-content {
+    display: none;
+  }
+
+  #second-nav > a {
+    background-color: rgba(227, 89, 105, 0.8);
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+  }
+
+  #subscriptions {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  #cake {
+    display: inline;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #email {
+    display: inline;
+    margin-top: 16%;
+    margin-left: 16%;
+  }
+
+  /* #image{
+        /* border: 1px solid black; 
+       
+    } */
+
+  #thebigimage {
+    /* border: 1px solid black; */
+    display: none;
+    width: 100%;
+    /* object-fit: contain;
+        
+        max-height: auto; */
+  }
+
+  #wings_two {
+    /* border: 1px solid black; */
+    display: block;
+    width: 100%;
+  }
+
+  #figgyfiggyfiggycantyousee {
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: "Dancing Script";
+    color: white;
+    max-width: 400px;
+    font-size: 30px;
+    display: block;
+    float: left;
+    position: relative;
+    top: 70%;
+  }
+
+  #banner {
+    display: grid;
+    grid-template-rows: 4fr 1fr 1fr;
+  }
+
+  #banner > nav > a {
+    width: 24%;
+    display: inline-block;
+  }
+
+  #subscribe > * {
+    display: inline-block;
+  }
+
+  #subscribe {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+  }
+
+  #stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #storyoneimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+  #storytwoimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+
+  #storythreeimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+
+  #storyfourimage {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+  }
+
+  #footerleft {
+    text-align: right;
+  }
+
+  #footerright {
+    text-align: right;
+    padding-top: 2%;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px) {
+  #wrapper {
+    background-color: rgba(165, 96, 77, 0.5);
+    display: grid;
+    /* grid-template-rows: 10fr 1fr; */
+  }
+
+  #main-nav {
+    display: none;
+  }
+
+  #second-nav-left {
+    text-align: center;
+  }
+
+  #logo {
+    /* background-color: black;
+        border-radius: 50%;
+        width: 120px; height: 120px;
+        /* width: 50%;
+        height: 0; */
+    /* padding-bottom: 120px;
+        /* padding-bottom: 50%; 
+
+        grid-row: 1/2;
+        
+        font-family: "Permanent Marker";
+        text-align: center;
+        color: white; */
+    position: relative;
+    background: black;
+    /* border-radius: 50%;
+        width: 50%; 
+        padding-bottom: 50%; */
+
+    border-radius: 210px;
+    width: 210px;
+    padding-bottom: 210px;
+
+    height: 0;
+    margin: 0 auto;
+    grid-column: span 1;
+    grid-row: span 1;
+
+    font-family: "Permanent Marker";
+    text-align: center;
+    color: white;
+    grid-row: 2/3;
+  }
+
+  #logo > p {
+    position: relative;
+    top: 1em;
+    font-size: 30px;
+  }
+
+  #main-nav {
+    grid-row: 1/2;
+    grid-column: 2/5;
+  }
+
+  #banner {
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+  }
+
+  #left > nav > a {
+    /* Makes the element take up the entire width */
+    display: inline-block;
+    text-align: left;
+  }
+
+  #left > nav > a > p {
+    display: inline;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  #left-content {
+    display: none;
+  }
+
+  #second-nav {
+    display: none;
+  }
+
+  #second-nav > a {
+    background-color: rgba(227, 89, 105, 0.8);
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+  }
+
+  #subscriptions {
+    font-size: 100px;
+    text-align: center;
+  }
+
+  #cake {
+    display: inline;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #email {
+    display: inline;
+    margin-top: 16%;
+    margin-left: 16%;
+  }
+
+  /* #image{
+        border: 1px solid black;
+       
+    } */
+
+  #thebigimage {
+    /* border: 1px solid black; */
+    display: none;
+    width: 100%;
+    height: 400px;
+    /* object-fit: contain;
+        
+        max-height: auto; */
+  }
+
+  #wings_two {
+    /* border: 1px solid black; */
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 700px;
+  }
+
+  #figgyfiggyfiggycantyousee {
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: "Dancing Script";
+    color: white;
+    max-width: 400px;
+    font-size: 30px;
+    display: block;
+    float: left;
+    position: relative;
+    top: 70%;
+  }
+
+  /* #banner{
+        display: grid;
+        grid-template-rows: 4fr 1fr 1fr;
+    } */
+
+  #banner > nav > a {
+    width: 24%;
+    display: inline-block;
+  }
+
+  #subscribe > * {
+    display: inline-block;
+  }
+
+  #subscribe {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+  }
+
+  #storyoneimage {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+  #storytwoimage {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  #storythreeimage {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  #storyfourimage {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  #footerleft {
+    text-align: right;
+    float: bottom;
+  }
+
+  #footerright {
+    text-align: right;
+    padding-top: 2%;
+    font-size: 15px;
+  }
+}

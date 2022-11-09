@@ -34,8 +34,7 @@
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+    <link rel="stylesheet" href="./styles/style.css">
 
 </head>
 
@@ -43,42 +42,58 @@
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
-
+    <!-- snippet template goes here-->
+    <template id="goalCardTemplate">
+        <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1 goal_title">Goal Title</h5>
+                <small class="goal_date">Time</small>
+            </div>
+            <p class="mb-1 text-muted goal_description">Get description</p>
+            <div class="list-group w-auto text-muted" id="tasks-go-here">Tasks
+                <label class="list-group-item d-flex gap-3">
+                    <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+                    <span class="pt-1 form-checked-content">
+                      <strong class="task_detail">task title</strong>
+                      <small class="d-block text-muted task_date">
+                        1:00–2:00pm
+                      </small>
+                    </span>
+                  </label>
+            </div>
+        </a>    
+    </template>
+    <template id="taskTemplate">
+        <label class="list-group-item d-flex gap-3">
+            <input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+            <span class="pt-1 form-checked-content">
+              <strong class="task_detail">task title</strong>
+              <small class="d-block text-muted task_date">
+                1:00–2:00pm
+              </small>
+            </span>
+          </label>
+    </template>
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
     <!-- the body of your page goes here -->
-    <main>
-        <div class="b-example-divider"></div>
-
-        <div class="bg-dark text-secondary px-4 py-5 text-center">
-            <div class="py-5">
-                <h1 class="display-5 fw-bold text-white">Welcome to Isorropia!</h1>
-                <div class="col-lg-6 mx-auto">
-                    <p class="fs-5 mb-4">Your goal Manager</p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                        <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Set a
-                            Goal</button>
-                        <button type="button" class="btn btn-outline-light btn-lg px-4">See Your Progress!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="b-example-divider mb-0"></div>
-    </main>
-
-    <div id="featurePlaceholder"></div>
+    <div class="container mt-4">
+        <div class="list-group accordion col-12 col-md-8 mx-auto" id="goals-go-here">
+        </div>   
+    </div>
+    
     <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
+    <footer id="footerPlaceholder"></footer>
+    <footer id="bottomNavPlaceholder"></footer>
 
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM12.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <!-- <script src="./scripts/script.js"></script> -->
-
+    <script src="./scripts/goal_list.js"></script>
+    <!-- <script src="./scripts/script.js"></script>  -->
 </body>
 
 </html>
