@@ -19,6 +19,27 @@ function writeGoals() {
   }
 
 
+//this is for the dropdown button
+
+  function dropdownListener() {
+    $('#goal-categories li').on('click', function () {
+       $('#dropdownMenuButton').text($(this).text());
+       console.log($(this).text());
+    });
+}
+dropdownListener();
+
+
+
+
+
+
+//this cannot work because there is no varible for the goal in the goal.uid section, I need to find the goal id then 
+//put it in there
+
+//   firebase.auth().onAuthStateChanged(user => {
+//     mySubGoals = db.collection("users").doc(user.uid).collection("goals").doc(goal.uid).collection("subgoals");
+// });
 
 
 
