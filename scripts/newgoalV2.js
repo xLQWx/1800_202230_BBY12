@@ -1,14 +1,58 @@
+var currentUser;
 
 console.log("Something was loaded");
 
 firebase.auth().onAuthStateChanged(user => {
+    currentUser =db.collection("users").doc(user.uid);
     myGoals = db.collection("users").doc(user.uid).collection("goals");
 });
 
+
+
+
+
+
+function printUserIDS() {
+  db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+    console.log(doc.id);
+    });
+  });
+}
+
+
+
+ function printGoalIDS() {
+   db.collection("users")
+     .get()
+     .then((querySnapshot) => {
+       querySnapshot.forEach((doc) => {
+         db.collection("users")
+           .doc(doc.id)
+           .collection("goals")
+           .get()
+           .then((querySnapshot) => {
+             querySnapshot.forEach((thing) => {
+               console.log(thing.id);
+             });
+           });
+       });
+     });
+ }
+
+
+  //userdoc holds user data now
+//   currentUser.get().then(userDoc =>{
+//     var goals = userDoc.data().goals;
+//     console.log(goals);
+// }) 
+// getGoals();
+
+//   db.collection("users").doc(user.uid).collection()
+// }
+
 function writeGoals() {
-   
- 
-  
+
     myGoals.add({
         Category: "Fitness",
         Goal: "To swim a 5k race",
@@ -17,6 +61,12 @@ function writeGoals() {
  
       });
   }
+
+
+// function returnGoalInfo(){
+//   console.log(myGoals);
+// }
+// returnGoalInfo();
 
 
 //this is for the dropdown button
@@ -28,6 +78,24 @@ function writeGoals() {
     });
 }
 dropdownListener();
+
+
+//Arron's code for something he did, I want to stop the user from moving onwards without selecting a goal category
+//otherwise, I can set it to misc. if I can't figure it out
+// app.get("/", function (req, res) {
+
+//   //logged in or not, if not logged in, sned user back to login page
+//   if (req.session.loggedIn) {
+//       res.redirect("/profile");
+//   } else {
+
+//       let doc = fs.readFileSync("./app/html/index.html", "utf8");
+
+//       res.set("Server", "Wazubi Engine");
+//       res.set("X-Powered-By", "Wazubi");
+//       res.send(doc);
+//   }
+// });
 
 
 
