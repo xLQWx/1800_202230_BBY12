@@ -106,3 +106,4 @@ function updateTaskStatus() {
     
     //update task completion data if checked
 }
+
