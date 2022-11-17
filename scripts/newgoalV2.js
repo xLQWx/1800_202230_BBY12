@@ -1,13 +1,148 @@
 var currentUser;
+var myGoals;
+var dropVal;
 
 console.log("Something was loaded");
 
 firebase.auth().onAuthStateChanged(user => {
     currentUser =db.collection("users").doc(user.uid);
-    myGoals = db.collection("users").doc(user.uid).collection("goals");
+    myGoals = currentUser.collection("goals");
 });
 
 
+function writeGoalsTest() {
+
+  myGoals.add({
+      category: "Fitness",
+      goal: "To swim a 5k race",
+      description: "To improve my swimming to the point where I can compete for the first time in a race in 3 months",
+      last_updated: firebase.firestore.FieldValue.serverTimestamp()
+
+    });
+}
+
+
+// currentGoal = currentUser.collection("goals").doc();
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//recreating making a variable for goalID, then use it later
+// function populateCardsDynamically() {
+
+//   //pointer to HTML elements
+//   let hikeCardTemplate = document.getElementById("hikeCardTemplate");
+//   let hikeCardGroup = document.getElementById("hikeCardGroup");
+  
+// // db.collection("users").doc()
+
+//   // db.collection("hikes").get()
+//   myGoals.get()
+//       .then(allHikes => {
+//           allHikes.forEach(doc => {
+//               var hikeName = doc.data().name; //gets the name field
+//               var hikeID = doc.data().code; //gets the unique CODE field
+//               var hikeLength = doc.data().length; //gets the length field
+//               let testHikeCard = hikeCardTemplate.content.cloneNode(true);
+//               testHikeCard.querySelector('.card-title').innerHTML = hikeName;     //equiv getElementByClassName
+//               testHikeCard.querySelector('.card-length').innerHTML = hikeLength;  //equiv getElementByClassName
+//               testHikeCard.querySelector('a').onclick = () => setHikeData(hikeID);//equiv getElementByTagName
+//               testHikeCard.querySelector('img').src = `./images/${hikeID}.jpg`;   //equiv getElementByTagName
+//               hikeCardGroup.appendChild(testHikeCard);
+//           })
+
+//       })
+// }
+// populateCardsDynamically();
+
+//stores the Hike ID
+function setHikeData(id){
+  localStorage.setItem ('hikeID', id);
+}
+
+//returns hike ID from storage
+var hikeID = localStorage.getItem("hikeID");
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function saveGoal() {
+    console.log("inside saveGoal")
+    let goalCategory = dropVal;
+    let goalName = document.getElementById('goal-name').value;
+    let gDescription = document.getElementById('goal-description').value;
+    let goalTarget = document.getElementById("goal-endate").value;
+
+    console.log(goalCategory, goalName, gDescription, goalTarget);
+    myGoals.add({
+      category: goalCategory,
+      goal: goalName,
+      description: gDescription,
+      endDate: goalTarget,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      
+    }).then(()=>{
+    //send us to the next page, what should that be here?? maybe the goal list page
+      window.location.href = "goals.html";
+  })
+}
+
+
+//   firebase.auth().onAuthStateChanged(user => {
+//       if (user) {
+//         //I may already have these and may not need them
+//           // var currentUser = db.collection("users").doc(user.uid)
+//           // var userID = user.uid;
+
+//           //what I have for this section:
+//           //currentUser =db.collection("users").doc(user.uid);
+//           // myGoals = currentUser.collection("goals");
+          
+          
+//           //get the document for current user.
+//           currentUser.get()
+//               .then(userDoc => {
+//                   var userEmail = userDoc.data().email;
+//                   myGoals.add({
+//                       // code: hikeID,
+//                       // userID: userID,
+//                       category: goalCategory,
+//                       theGoal: goalName,
+//                       goalDescription: gDescription,
+//                       endDate: goalTarget,
+//                       timestamp: firebase.firestore.FieldValue.serverTimestamp()
+//                   }).then(()=>{
+//                     //send us to the next page, what should that be here?? maybe the goal list page
+//                       window.location.href = "goals.html"; //new line added
+//                   })
+//               })
+//       } else {
+//           // No user is signed in.
+//       }
+//   });
+// }
+ 
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//function to save the goal information with listener on the confirm button
+// function saveGoal() {
+  // create a goal subcollection, maybe call a write goal function
+  //
+  //
+
+  // userGoal = document.getElementById('goalTitle').value;       //get the value of the field with id="nameInput"
+  // userSchool = document.getElementById('schoolInput').value;     //get the value of the field with id="schoolInput"
+  // userCity = document.getElementById('cityInput').value;
+
+// }
 
 
 
@@ -41,32 +176,7 @@ function printUserIDS() {
  }
 
 
-  //userdoc holds user data now
-//   currentUser.get().then(userDoc =>{
-//     var goals = userDoc.data().goals;
-//     console.log(goals);
-// }) 
-// getGoals();
 
-//   db.collection("users").doc(user.uid).collection()
-// }
-
-function writeGoals() {
-
-    myGoals.add({
-        Category: "Fitness",
-        Goal: "To swim a 5k race",
-        Description: "To improve my swimming to the point where I can compete for the first time in a race in 3 months",
-        last_updated: firebase.firestore.FieldValue.serverTimestamp()
- 
-      });
-  }
-
-
-// function returnGoalInfo(){
-//   console.log(myGoals);
-// }
-// returnGoalInfo();
 
 
 //this is for the dropdown button
@@ -75,6 +185,7 @@ function writeGoals() {
     $('#goal-categories li').on('click', function () {
        $('#dropdownMenuButton').text($(this).text());
        console.log($(this).text());
+       dropVal = $(this).text();
     });
 }
 dropdownListener();
