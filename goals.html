@@ -40,26 +40,26 @@
 
 <body>
   <template id="goalCardTemplate">
-    <a href="#" class="list-group-item list-group-item-action">
+    <a href="#" class="list-group-item list-group-item-action mb-4">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1" id="goal-category">Get Category</h5>
-        <small class="goal-date">get date</small>
+        <small id="goal-date">get date</small>
       </div>
       <p class="mb-1 text-muted" id="goal-title">Get goal</p>
       <p class="mb-1 text-muted" id="goal-description">Get description</p>
-      <div class="list-group w-auto text-muted">Tasks
+      <div class="list-group w-auto text-muted">Subgoals
         <!-- Task Templelte goes here-->
         <div id="tasks-go-here"></div>
-        <!-- Button trigger modal -->
-        <button id="add-task" type="button" class="btn btn-primary get-goal" data-bs-toggle="modal" data-bs-target="#taskModal" width="24">
-           + 
-        </button>
       </div>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-outline-secondary get-goalID" data-bs-toggle="modal" data-bs-target="#taskModal" width="24">
+           new subgoal 
+      </button>
     </a>
   </template>
   <template id="taskTemplate">
     <label class="list-group-item d-flex gap-3">
-      <input class="form-check-input flex-shrink-0 get-goal" id="task_done" type="checkbox" value="" onclick="updateTaskStatus()"
+      <input class="form-check-input flex-shrink-0 get-taskID" id="task_done" type="checkbox" value="" onclick="updateTaskStatus(taskID)"
         style="font-size: 1.375em;">
       <span class="pt-1 form-checked-content">
         <strong class="task_detail">Get task title</strong>
@@ -75,6 +75,9 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- the body of your page goes here -->
+  <div class="text-center">
+    <h1 class="">Goals</h1>
+  </div>
   <div class="container mt-4">
     <div class="list-group accordion col-12 col-md-8 mx-auto" id="goals-go-here">
     </div>
@@ -98,7 +101,7 @@
         </div>
         <div class="modal-footer">
           <button id="task_cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-          <button id="task_confirm" type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="addTask()">Confirm</button>
+          <button id="task_confirm" type="button" class="btn btn-primary get-taskID get-goalID" data-bs-dismiss="modal" onclick="addTask(goalID)" >Confirm</button>
         </div>
       </div>
     </div>
