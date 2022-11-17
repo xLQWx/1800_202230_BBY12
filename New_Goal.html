@@ -75,16 +75,16 @@
 
                 <label> Goal Title </label>
                 <br>
-                <input id="title" type="text">
+                <input id="goal-name" type="text">
 
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descrition</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                    <label for="goal-description" class="form-label">Descrition</label>
+                    <textarea class="form-control" id="goal-description" rows="2"></textarea>
                 </div>
 
 
-                <div class="mb-3"><label for="exampleFormControlInput1" class="form-label">Target Date</label>
-                    <input type="date" class="form-label" id="exampleFormControlInput1" placeholder="name@example.com">
+                <div class="mb-3"><label for="goal-endate" class="form-label">Target Date</label>
+                    <input type="date" class="form-label" id="goal-endate" placeholder="name@example.com">
                 </div>
 
                 <br>
@@ -117,7 +117,7 @@
 
                 <div class="mt-4">
                         <input class="btn btn-secondary" type="button" value="Cancel" onclick="location.href='/main.html';">
-                    <input id="Confirm" class="btn" type="submit" value="Confirm" onclick="saveGoal()">
+                    <input id="Confirm" class="btn" type="button" value="Confirm" onclick="saveGoal()">
 
                 </div>
             </form>
