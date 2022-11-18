@@ -35,6 +35,16 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
 
+    <style>
+        #graph-img {
+    padding: 1vw;
+}
+    #button1.hover {
+        color: white;
+    }
+
+    </style>
+
 </head>
 
 <body>
@@ -47,11 +57,16 @@
 
     <!-- the body of your page goes here -->
     <!-- stuff -->
+    <div class="container-fluid mt-5 p-5">
+        <h4 class="display-4"><span id ="name-goes-here"></span>, your progress:</h4>
+        <img id="graph-img" src="./images/chart.jpg" width="100%" height="100%">
+    </div>
     <div class="container-fluid bg-light text-dark p-5">
-        <div class="container bg-light p-5">
-            <h1 class="display-4">Good morning,<span id ="name-goes-here"></span></h1>
-            <hr>
-            <p>Quote of the day: The best view comes after the hardest climb.</p>
+        <div class="container bg-light p-5" style="text-align:center">
+                <a class="nav-link active" href="/New_Goal.html">
+            <button type="button" id="button1" class="btn btn-outline-light" style="font-size: 30px; background-color:cadetblue;">
+                Create a Goal!</button>
+            </a>
         </div>
 </div>
 
