@@ -33,7 +33,7 @@ function populateGoalsDynamically() {
                 goalCard.querySelector('.goal-description').innerHTML = description;
                 goalCard.querySelector('.goal-date').innerHTML = date;
 
-                //goalCard.querySelector('a').onclick=()=>setGoalData(doc.id);
+                //pass goal doc id with url
                 goalCard.querySelector('a').href = "eachGoal.html?id="+ doc.id;
           
                 goalCardGroup.appendChild(goalCard);
@@ -41,7 +41,4 @@ function populateGoalsDynamically() {
         })
 }
 
-function setGoalData(id){
-    localStorage.setItem('goalID', id);
-}
 
