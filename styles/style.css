@@ -4,3 +4,7 @@
 #bottomNavPlaceholder a:hover, #bottomNavPlaceholder a:active{
     color:white !important;
 }
+
+.goal-category{
+    color:cadetblue !important;
+}

@@ -39,22 +39,16 @@
 </head>
 
 <body>
-  <template id="goalCardTemplate">
-    <div class="col-md-6 goalCard">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary goal-category">World</strong>
-          <h3 class="mb-0 goal-title">Featured post</h3>
-          <div class="mb-1 text-muted goal-date">date</div>
-          <p class="card-text mb-auto goal-description">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="eachGoal.html" class="stretched-link link-secondary">details</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-  
-        </div>
-      </div>
-    </div>
+
+  <template id="taskTemplate">
+    <label class="list-group-item d-flex gap-3">
+      <input class="form-check-input flex-shrink-0 " id="task_done" type="checkbox" value="" onclick="updateTaskStatus(taskID)"
+        style="font-size: 1.375em;">
+      <span class="pt-1 form-checked-content">
+        <strong class="task_detail">Get task title</strong>
+        <!-- <small class="d-block text-muted task_date">Get date</small> -->
+      </span>
+    </label>
   </template>
 
   <!------------------------------>
@@ -64,7 +58,46 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- the body of your page goes here -->
-  <div id="goals-go-here"></div>
+  <div class="container-fluid mt-2">
+    <img src="./images/chart.jpg" width="100%" height="100%">
+  </div>
+  <!-- task list -->
+  <div class="list-group w-auto text-muted">
+    <label class="list-group-item d-flex gap-3 bg-light justify-content-between">
+      <h3>SUBGOALS</h3>
+      <button 
+        type="button" class="btn btn-secondary mt-1 get-goalID" data-bs-toggle="modal" data-bs-target="#taskModal" width="24">
+           + 
+      </button>
+    </label>
+    <!-- task template will go here -->
+    <div id="task-go-here"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="taskModalLabel">Add a subgoal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="updateTask" class="col-form-label">Description:</label>
+              <input type="text" class="form-control" id="newTask">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="task_cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button id="task_confirm" type="button" class="btn btn-primary" data-bs-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
   <!-- our own footer goes here-->
   <footer id="footerPlaceholder"></footer>
@@ -75,7 +108,7 @@
   <!---------------------------------------------->
   <script src="./scripts/firebaseAPI_TEAM12.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/goal_list.js"></script>
+  <script src="./scripts/eachGoal.js"></script>
   <!-- <script src="./scripts/script.js"></script>  -->
 </body>
 
