@@ -17,6 +17,7 @@ function populateGoalsDynamically() {
     let goalCardGroup = document.getElementById("goals-go-here"); //where to append card
 
     currentUser.collection("goals")
+    
         .get()
         .then(allGoals => {
             allGoals.forEach(doc => {
