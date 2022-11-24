@@ -26,23 +26,33 @@ function writeGoalsTest() {
 
 function saveGoal() {
     console.log("inside saveGoal")
+
+  //if any fields are empty: create an an error popup
+
+
     let goalCategory = dropVal;
     let goalName = document.getElementById('goal-name').value;
     let gDescription = document.getElementById('goal-description').value;
     let goalTarget = document.getElementById("goal-endate").value;
 
     console.log(goalCategory, goalName, gDescription, goalTarget);
+
+
+
     myGoals.add({
       category: goalCategory,
       goal: goalName,
       description: gDescription,
       endDate: goalTarget,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
+
       
+   
     }).then(()=>{
+
     //send us to the next page, what should that be here?? maybe the goal list page
       window.location.href = "goals.html";
-  })
+  });
 }
 
 //////////////////////////////////////////////////////

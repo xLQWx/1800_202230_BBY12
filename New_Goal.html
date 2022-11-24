@@ -89,7 +89,7 @@
 
                 <br>
                 <br>
-                <div>
+                <!-- <div>
                     <label> Subgoal </label>
                     <br>
                     <input id="title" type="text">
@@ -111,14 +111,14 @@
                             style="background-color:cadetblue">Add
                             Subgoal</button>
                     </div>
-                </div>
+                </div> -->
 
                 <br>
 <div class="mt-4">
-    <input class="btn btn-secondary" type="button" value="Cancel" onclick="location.href='/main.html';">
+    <input class="btn btn-secondary" type="button" value="Cancel" data-bs-toggle="modal" data-bs-target="#exampleModal">
 
     <!-- Button trigger modal -->
-    <button id="Confirm" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <button id="Confirm" type="button" class="btn">
         Confirm
     </button>
 
@@ -131,15 +131,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    Your changes will not be saved
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button id = "Confirm" type="button" class="btn btn-primary" onclick="saveGoal()">Save changes</button>
+                    <button id = "Confirm" type="button" class="btn" onclick="location.href='/main.html';">Accept</button>
                 </div>
             </div>
         </div>
