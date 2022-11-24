@@ -8,3 +8,8 @@
 .goal-category{
     color:cadetblue !important;
 }
+
+.task-checkbox:checked+span{
+    text-decoration: line-through !important;
+    color:gray;
+}

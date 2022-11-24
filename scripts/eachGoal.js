@@ -24,7 +24,8 @@ function populateTasks(){
 
                 let task = taskTemplate.content.cloneNode(true);
                 
-                task.querySelector('.task_detail').innerHTML = task_name;
+                task.querySelector('.task-text').innerHTML = task_name;
+                task.querySelector('.task-checkbox').onclick=()=>updateTaskStatus(doc.id);
 
                 taskGroup.appendChild(task);
             })
@@ -32,7 +33,10 @@ function populateTasks(){
         })
 };
 
-// clicking on the confirm button when creating a new subgoal will add the input to subcollecton tasks
+/*
+clicking on the confirm button when creating a new subgoal will add the 
+input to subcollecton tasks
+*/
 document.querySelector("#task-confirm").addEventListener("click", ()=>{
     let params = new URL(window.location.href);
     let goalDoc = params.searchParams.get('id');
@@ -48,3 +52,9 @@ document.querySelector("#task-confirm").addEventListener("click", ()=>{
             window.location.href = params; 
         })
 });
+
+function updateTaskStatus(TaskID){
+    //if checkbox is checked, 
+    console.log("Task in" + TaskID);
+};
+
