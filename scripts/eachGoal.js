@@ -4,14 +4,29 @@ let goalDoc = params.searchParams.get('id');
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid);
+        //check if it's valid url with the id in the link
+        if (goalDoc != null){
+            insertGoalInfo();
+            populateTasks();
+            showChecked();
+        }else{
+            window.location.href = "goals.html";
+        }
         
-        populateTasks();
-        showChecked();
     } else {
         console.log("no user found");
         window.location.href = "login.html";
     }
 });
+
+function insertGoalInfo(){
+    currentUser.collection("goals").doc(goalDoc)
+        .get()
+        .then(snap=>{
+            //console.log("insertGoalInfo is called");
+            document.querySelector('.goal-title').innerHTML = snap.data().goal;
+        })
+}
 
 function populateTasks(){
     let taskTemplate = document.getElementById("taskTemplate");
@@ -20,6 +35,7 @@ function populateTasks(){
     // let params = new URL(window.location.href);
     // let goalDoc = params.searchParams.get('id');
     //console.log("goaldoc: " + goalDoc);
+
     currentUser.collection("goals").doc(goalDoc).collection("tasks")
         .get()
         .then(allTasks =>{

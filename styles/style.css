@@ -13,3 +13,7 @@
     text-decoration: line-through !important;
     color:gray;
 }
+
+input:checked{
+    background-color:cadetblue !important;
+}
