@@ -38,7 +38,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   <template id="taskTemplate">
     <label class="list-group-item d-flex gap-3">
@@ -63,10 +63,10 @@
   <!-- task list -->
   <div class="list-group w-auto text-muted">
     <div>new div for goal informaiton</div>
-    <label class="list-group-item d-flex gap-3 bg-light justify-content-end align-content-center">
+    <label class="list-group-item d-flex gap-3 bg-light justify-content-start align-content-center">
       <button 
         type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#taskModal" width="24">
-           + 
+           + new subgoal
       </button>
     </label>
     <!-- task template will go here -->
@@ -99,7 +99,7 @@
   
 
   <!-- our own footer goes here-->
-  <footer id="footerPlaceholder"></footer>
+  <footer id="footerPlaceholder" class="mt-auto"></footer>
   <!-- <footer id="bottomNavPlaceholder"></footer> -->
 
   <!---------------------------------------------->
