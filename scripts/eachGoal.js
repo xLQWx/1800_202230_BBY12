@@ -1,8 +1,12 @@
+let params = new URL(window.location.href);
+let goalDoc = params.searchParams.get('id');
+
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid);
         
         populateTasks();
+        showChecked();
     } else {
         console.log("no user found");
         window.location.href = "login.html";
@@ -13,8 +17,8 @@ function populateTasks(){
     let taskTemplate = document.getElementById("taskTemplate");
     let taskGroup = document.getElementById("task-go-here");
 
-    let params = new URL(window.location.href);
-    let goalDoc = params.searchParams.get('id');
+    // let params = new URL(window.location.href);
+    // let goalDoc = params.searchParams.get('id');
     //console.log("goaldoc: " + goalDoc);
     currentUser.collection("goals").doc(goalDoc).collection("tasks")
         .get()
@@ -25,7 +29,8 @@ function populateTasks(){
                 let task = taskTemplate.content.cloneNode(true);
                 
                 task.querySelector('.task-text').innerHTML = task_name;
-                task.querySelector('.task-checkbox').onclick=()=>updateTaskStatus(doc.id);
+                
+                task.querySelector('.task-checkbox').setAttribute('id', doc.id);
 
                 taskGroup.appendChild(task);
             })
@@ -38,8 +43,8 @@ clicking on the confirm button when creating a new subgoal will add the
 input to subcollecton tasks
 */
 document.querySelector("#task-confirm").addEventListener("click", ()=>{
-    let params = new URL(window.location.href);
-    let goalDoc = params.searchParams.get('id');
+    // let params = new URL(window.location.href);
+    // let goalDoc = params.searchParams.get('id');
 
     subgoal = document.getElementById('new-task').value;
     
@@ -53,8 +58,30 @@ document.querySelector("#task-confirm").addEventListener("click", ()=>{
         })
 });
 
-function updateTaskStatus(TaskID){
-    //if checkbox is checked, 
-    console.log("Task in" + TaskID);
-};
+//return the checkbox.checked
+function checkboxListen(checkboxBoolean, taskDoc){
+    //console.log(taskDoc +" with " +checkboxBoolean);
+    currentUser.collection("goals").doc(goalDoc).collection("tasks").doc(taskDoc)
+        .set({
+            taskDone: checkboxBoolean
+        },{merge:true})
+    
+}
+
+function showChecked(){
+    currentUser.collection("goals").doc(goalDoc).collection("tasks")
+        .where("taskDone","==", true)
+        .get()
+        .then(snap=> {
+            queryData = snap.docs;
+            //console.log(queryData);
+            queryData.forEach(doc=>{
+                checkboxStatus = doc.data().taskDone
+                document.getElementById(doc.id).checked = checkboxStatus;
+            })
+        });
+}
+
+
+
 

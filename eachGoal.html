@@ -42,7 +42,9 @@
 
   <template id="taskTemplate">
     <label class="list-group-item d-flex gap-3">
-      <input class="form-check-input flex-shrink-0 task-checkbox" type="checkbox" value="task-checkbox" style="font-size: 1.375em;">
+      <input class="form-check-input flex-shrink-0 task-checkbox" type="checkbox" id="sf" 
+              value="task-checkbox" style="font-size: 1.375em;"
+              onclick="checkboxListen(this.checked, this.id)">
       <span class="pt-1 form-checked-content">
         <strong class="task-text">Get task text</strong>
         <!-- <small class="d-block text-muted task_date">Get date</small> -->
