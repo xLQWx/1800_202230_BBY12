@@ -17,3 +17,40 @@
 input:checked{
     background-color:cadetblue !important;
 }
+
+
+/* This is for the newGoal page */
+#Confirm {
+    color: #ffffff;
+    background-color: cadetblue;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+#Add-subgoal {
+    color: #ffffff;
+    background-color: cadetblue;
+}
+
+
+
+/* This is for the goalLog page */
+#no-logs h1{
+    margin: 5%;
+    text-align: center;
+    float: none;
+}
+
+#first-log{
+    display:inline-block;
+    justify-content: center;
+    vertical-align: middle;
+    background-color: cadetblue;
+    border-color: cadetblue;
+}
+
+#first-log:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgba(95, 158, 160, 0.75);
+    border-color: cadetblue;
+
+}
