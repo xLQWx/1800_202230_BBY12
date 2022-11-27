@@ -6,19 +6,7 @@ const yesLogs = document.getElementById('yes-logs');
 
 
 
-
-btn.addEventListener('click', function handleClick() {
-    if (box.style.display === 'none') {
-      box.style.display = 'block';
-  
-      btn.textContent = 'Hide div';
-    } else {
-      box.style.display = 'none';
-  
-      btn.textContent = 'Show div';
-    }
-  });
-
+//this is for choosing what I display, I will do it later
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         currentUser = db.collection("users").doc(user.uid);
@@ -40,6 +28,16 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
+
+
+//This if for piggybacking the goal id so I can pass to it's subcollection
+
+
+
+
+
+
+//this is for diplaying the goal info
 function insertGoalInfo(){
     currentUser.collection("goals").doc(goalDoc)
         .get()
@@ -75,49 +73,7 @@ function populateTasks(){
         })
 };
 
-/*
-clicking on the confirm button when creating a new subgoal will add the 
-input to subcollecton tasks
-*/
-document.querySelector("#task-confirm").addEventListener("click", ()=>{
-    // let params = new URL(window.location.href);
-    // let goalDoc = params.searchParams.get('id');
 
-    subgoal = document.getElementById('new-task').value;
-    
-    currentUser.collection("goals").doc(goalDoc).collection("tasks")
-        .add({
-            task_description: subgoal
-        })
-        .then(() => {
-            console.log("Task added to" + goalDoc);
-            window.location.href = params; 
-        })
-});
-
-//return the checkbox.checked
-function checkboxListen(checkboxBoolean, taskDoc){
-    //console.log(taskDoc +" with " +checkboxBoolean);
-    currentUser.collection("goals").doc(goalDoc).collection("tasks").doc(taskDoc)
-        .set({
-            taskDone: checkboxBoolean
-        },{merge:true})
-    
-}
-
-function showChecked(){
-    currentUser.collection("goals").doc(goalDoc).collection("tasks")
-        .where("taskDone","==", true)
-        .get()
-        .then(snap=> {
-            queryData = snap.docs;
-            //console.log(queryData);
-            queryData.forEach(doc=>{
-                checkboxStatus = doc.data().taskDone
-                document.getElementById(doc.id).checked = checkboxStatus;
-            })
-        });
-}
 
 
 
