@@ -13,19 +13,18 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 
-document.querySelector("#task-confirm").addEventListener("click", ()=>{
-  // let params = new URL(window.location.href);
-  // let goalDoc = params.searchParams.get('id');
+document.querySelector("#Confirm").addEventListener("click", ()=>{
 
-  subgoal = document.getElementById('new-task').value;
+  log = document.getElementById('log-entry').value;
   
-  currentUser.collection("goals").doc(goalDoc).collection("tasks")
+  currentUser.collection("goals").doc(goalDoc).collection("Goal_Logs")
       .add({
-          task_description: subgoal
+          task_description: log,
+          time: firebase.firestore.FieldValue.serverTimestamp()
       })
       .then(() => {
-          console.log("Task added to" + goalDoc);
-          window.location.href = params; 
+          console.log("Log added for" + goalDoc);
+          window.location.href ="GoalLog.html?id="+ goalDoc; 
       })
 });
 
