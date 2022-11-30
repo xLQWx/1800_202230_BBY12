@@ -1,91 +1,74 @@
 let params = new URL(window.location.href);
 let goalDoc = params.searchParams.get('id');
 
+var currentuser;
+// var logspace = currentUser.collection("goals").doc(goalDoc).collection("Goal_Logs")
+
+//from each goal, checks that the goaldoc is not empty
+//I wan to us the if statement to fill in the "nothing here yet message/div"
 
 
-//document.querySelector('button').href = "newLog.html?id="+ goalDoc;
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+      currentUser = db.collection("users").doc(user.uid);
+      //console.log("current user: " + user.uid);
+      
+      populateLogsDynamically();
+  } else {
+      console.log("no user found");
+      window.location.href = "login.html";
+  }
+});
 
 
 
-function startLog() {
-    console.log("making new Goal Log")
+//other than calling this LOgs instead of goals, this is mostly unchanged, this populates a space if there is a log
+//it is from on dof the demos
 
 
-    //send us to the next page, what should that be here?? maybe the goal list page
-      window.location.href = "newLog.html?id="+ goalDoc;
+function populateLogsDynamically() {
+  let logCardTemplate = document.getElementById("logCardTemplate"); //card template
+  let logCardGroup = document.getElementById("logs-go-here"); //where to append card
+
+  currentUser.collection("goals").doc(goalDoc).collection("Goal_Logs")
+  
+      .get()
+      .then(allLogs => {
+          allLogs.forEach(doc => {
+
+
+            
+              var description = doc.data().task_description; //gets the description
+
+//handling the date
+let fireStoreTimestamp = doc.data().time;
+let javascriptDate = fireStoreTimestamp.toDate();
+
+var time = javascriptDate;
+              // var time = doc.data().time;//gets target date
+              //console.log("goal: " + doc.id + " is displayed")
+
+              let logCard = logCardTemplate.content.cloneNode(true);
+
+              // goalCard.querySelector('.goal-title').innerHTML = goal;
+              // goalCard.querySelector('.goal-category').innerHTML = category;
+              logCard.querySelector('.log-description').innerHTML = description;
+              logCard.querySelector('.log-date').innerHTML = time;
+
+              //pass goal doc id with url
+              // goalCard.querySelector('a').href = "eachGoal.html?id="+ doc.id;
+        console.log('This has worked to this point');
+              logCardGroup.appendChild(logCard);
+          })
+      })
 }
 
-//this is causing issues at the moment, it's mean for determining what should be populated on the page
-// const nologs = document.getelementbyID ('no-logs');
-// const yesLogs = document.getElementById('yes-logs');
-
-
-//this is for choosing what I display, I will do it later
-// firebase.auth().onAuthStateChanged(user => {
-//     if (user) {
-//         currentUser = db.collection("users").doc(user.uid);
-//         //check if it's valid url with the id in the link
-//         if (goalDoc != null){
-//             nologs.style.display = 'none';
-// //if the logs collection is empty, then display a message that says it is empty
-
-//         }else{
-//             yesLogs.style.disply = 'none';
-
-
-//             window.location.href = "goals.html";
-//         }
-        
-//     } else {
-//         console.log("no user found");
-//         window.location.href = "login.html";
-//     }
-// });
-
-
-
-//This if for piggybacking the goal id so I can pass to it's subcollection
-
-
-
-
-
-
-// //this is for diplaying the goal info
-// function insertGoalInfo(){
-//     currentUser.collection("goals").doc(goalDoc)
-//         .get()
-//         .then(snap=>{
-//             //console.log("insertGoalInfo is called");
-//             document.querySelector('.goal-title').innerHTML = snap.data().goal;
-//         })
-// }
-
-// function populateTasks(){
-//     let taskTemplate = document.getElementById("taskTemplate");
-//     let taskGroup = document.getElementById("task-go-here");
-
-//     // let params = new URL(window.location.href);
-//     // let goalDoc = params.searchParams.get('id');
-//     //console.log("goaldoc: " + goalDoc);
-
-//     currentUser.collection("goals").doc(goalDoc).collection("tasks")
-//         .get()
-//         .then(allTasks =>{
-//             allTasks.forEach(doc=>{
-//                 var task_name = doc.data().task_description;
-
-//                 let task = taskTemplate.content.cloneNode(true);
-                
-//                 task.querySelector('.task-text').innerHTML = task_name;
-                
-//                 task.querySelector('.task-checkbox').setAttribute('id', doc.id);
-
-//                 taskGroup.appendChild(task);
-//             })
-
-//         })
-// };
+//This is the function that creates the goal log
+function startLog() {
+  console.log("making new Goal Log")
+  //send us to the next page, what should that be here?? maybe the goal list page
+    window.location.href = "newLog.html?id="+ goalDoc;
+}
 
 
 
