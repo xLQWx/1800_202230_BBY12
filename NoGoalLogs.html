@@ -35,24 +35,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
 
-    <style>
-        #graph-img {
-    padding: 1vw;
-    width: 50%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-    #button1.hover {
-        color: white;
-    }
-
-    </style>
-
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <!------------------------------>
     <!-- Your HTML Layout go here -->
     <!------------------------------>
@@ -62,59 +47,37 @@
 
     <!-- the body of your page goes here -->
     <!-- stuff -->
-    <div class="container-fluid mt-5 p-5">
-        <h4 class="display-4 text-center"><span id ="name-goes-here"></span>, Welcome!</h4>
-        <img id="graph-img" src="./images/target.jpg" width="100%" height="500px">
-    </div>
-    <div class="container-fluid bg-light text-dark p-5">
-        <div class="container bg-light p-5" style="text-align:center">
-                <a class="nav-link active" href="/New_Goal.html">
-            <button type="button" id="button1" class="btn btn-outline-light" style="font-size: 30px; background-color:cadetblue;">
-                Create a Goal!</button>
-            </a>
-        </div>
-        <div class="card-group" id="goals-go-here">
-            
-          </div>
-          
-        
-<!-- </div> -->
-<template id="goalCardTemplate">
-    <div class="col-md-6 goalCard">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary goal-category">World</strong>
-          <h3 class="mb-0 goal-title">Featured post</h3>
-          <div class="mb-1 text-muted goal-date">date</div>
-          <p class="card-text mb-auto goal-description">This is a wider card with supporting text below as a natural 
-            lead-in to additional content.</p>
-          <a href="eachGoal.html" class="stretched-link link-secondary">details</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-  
-        </div>
-      </div>
-    </div>
-  </template>
-  <div class=" col-2 mx-auto">
-    <a class="nav-link active" href="/goals.html">
-    <button class="btn btn-outline-light" type="button" style="font-size: 20px; background-color:cadetblue;" >
-        See More</button>
-  </a>
-  </div>
-</div>
+    <main>
+        <div class="container">
 
 
-    <!-- our own footer goes here-->
-    <footer id="footerPlaceholder"></footer>
 
+            <!-- <div id="yes-logs">
+                <button id="Confirm" type="button" class="btn btn-primary">
+                    Add a goal log
+                </button>
+            </div> -->
+    
+            <div id="no-logs" class="col text-center">
+                <h1 id="log-heading">
+                    There's nothing here... Yet!
+                </h1>
+                <button id="first-log" type="button" class="btn btn-primary" onclick="startLog()">
+                    Write a goal log
+                </button>
+    
+            </div>
+        </div>
+    
+    </main><!-- our own footer goes here-->
+    <footer id="footerPlaceholder" class="mt-auto"></footer>
     <!---------------------------------------------->
     <!-- Your own JavaScript functions go here    -->
     <!---------------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM12.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/main.js"></script> 
-
+    <script src="./scripts/nogoalLog.js"></script>
+    <!-- <script src="./scripts/script.js"></script>  -->
 </body>
 
 </html>
