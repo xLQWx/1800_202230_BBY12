@@ -47,7 +47,7 @@ It has the following subfolders and files:
     /goalLog.js              # script for weekly goal log page
     /goals.js                # script for list of goals page
     /main.js                 # script for displaying overview after user logged in
-    /newGoal.js              # script for goal creation form
+    /newgoalV2.js            # script for goal creation form
     /newLog.js               # script for log creation form
     /script.js               # NOT IN USE
     /skeleton.js             # script for displaying partial htmls and logout function
