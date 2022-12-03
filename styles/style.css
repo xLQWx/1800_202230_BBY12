@@ -9,6 +9,10 @@
     color:cadetblue !important;
 }
 
+#task-confirm{
+    background-color:cadetblue;
+}
+
 .task-checkbox:checked+span{
     text-decoration: line-through !important;
     color:gray;
