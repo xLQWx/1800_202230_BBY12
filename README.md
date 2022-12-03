@@ -53,6 +53,7 @@ It has the following subfolders and files:
     /skeleton.js             # script for displaying partial htmls and logout function
 ├── styles                   # Folder for styles
     /style.css               # Main css file
+    /styles2.css             # another css file
 ├── text                     # Folder for partial htmls
     /featureList.html        # partial html for features
     /footer.html             # partial html for footer

@@ -2,118 +2,117 @@
 <html lang="en">
 
 <head>
-    <title>Isorropia</title>
-    <meta name="comp1800 template" content="My 1800 App">
+  <title>Isorropia</title>
+  <meta name="comp1800 template" content="My 1800 App">
 
-    <!------------------------>
-    <!-- Required meta tags -->
-    <!------------------------>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
 
-    <style>
-        #graph-img {
-    padding: 1vw;
-    width: 50%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-    #button1.hover {
-        color: white;
+  <style>
+    #graph-img {
+      padding: 1vw;
+      width: 50%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    </style>
+    #button1.hover {
+      color: white;
+    }
+  </style>
 
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!-- our own navbar goes here -->
-    <nav id="navbarPlaceholder"></nav>
+  <!-- our own navbar goes here -->
+  <nav id="navbarPlaceholder"></nav>
 
-    <!-- the body of your page goes here -->
-    <!-- stuff -->
-    <div class="container-fluid mt-5 p-5">
-        <h4 class="display-4 text-center"><span id ="name-goes-here"></span>, Welcome!</h4>
-        <img id="graph-img" src="./images/target.jpg" width="100%" height="500px">
+  <!-- the body of your page goes here -->
+  <!-- stuff -->
+  <div class="container-fluid mt-5 p-5">
+    <h4 class="display-4 text-center"><span id="name-goes-here"></span>, Welcome!</h4>
+    <img id="graph-img" src="./images/target.jpg" width="100%" height="500px">
+  </div>
+
+  <div class="container-fluid bg-light text-dark p-5">
+    <div class="container bg-light p-5" style="text-align:center">
+      <a class="nav-link active" href="/New_Goal.html">
+        <button type="button" id="button1" class="btn btn-outline-light"
+          style="font-size: 30px; background-color:cadetblue;">
+          Create a Goal!</button>
+      </a>
     </div>
-    <div class="container-fluid bg-light text-dark p-5">
-        <div class="container bg-light p-5" style="text-align:center">
-                <a class="nav-link active" href="/New_Goal.html">
-            <button type="button" id="button1" class="btn btn-outline-light" style="font-size: 30px; background-color:cadetblue;">
-                Create a Goal!</button>
-            </a>
-        </div>
-        <div class="card-group" id="goals-go-here">
-            
+
+    <div class="card-group" id="goals-go-here"></div>
+
+    <template id="goalCardTemplate">
+      <div class="col-md-6 goalCard">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary goal-category">World</strong>
+            <h3 class="mb-0 goal-title">Featured post</h3>
+            <div class="mb-1 text-muted goal-date">date</div>
+            <p class="card-text mb-auto goal-description">This is a wider card with supporting text below as a natural
+              lead-in to additional content.</p>
+            <a href="eachGoal.html" class="stretched-link link-secondary">details</a>
           </div>
-          
-        
-<!-- </div> -->
-<template id="goalCardTemplate">
-    <div class="col-md-6 goalCard">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary goal-category">World</strong>
-          <h3 class="mb-0 goal-title">Featured post</h3>
-          <div class="mb-1 text-muted goal-date">date</div>
-          <p class="card-text mb-auto goal-description">This is a wider card with supporting text below as a natural 
-            lead-in to additional content.</p>
-          <a href="eachGoal.html" class="stretched-link link-secondary">details</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-  
+          <div class="col-auto d-none d-lg-block"></div>
         </div>
       </div>
+    </template>
+
+    <div class=" col-2 mx-auto">
+      <a class="nav-link active" href="/goals.html">
+        <button class="btn btn-outline-light" type="button" style="font-size: 20px; background-color:cadetblue;">
+          More</button>
+      </a>
     </div>
-  </template>
-  <div class=" col-2 mx-auto">
-    <a class="nav-link active" href="/goals.html">
-    <button class="btn btn-outline-light" type="button" style="font-size: 20px; background-color:cadetblue;" >
-        More</button>
-  </a>
   </div>
-</div>
 
 
-    <!-- our own footer goes here-->
-    <footer id="footerPlaceholder"></footer>
+  <!-- our own footer goes here-->
+  <footer id="footerPlaceholder"></footer>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="./scripts/firebaseAPI_TEAM12.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/main.js"></script> 
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="./scripts/firebaseAPI_TEAM12.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/main.js"></script>
 
 </body>
 
